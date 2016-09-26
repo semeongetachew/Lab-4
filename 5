@@ -1,22 +1,30 @@
-class ExecFive
-{
-  
- public static void main(String args[])
-   {
-     switch(choice);
-     {
-       case 1: System.out.println("You were selected 1.");
-       case 2: 
-         
-       case 3: System.out.println("You were selected 2 or 3."); 
-                break;
-       case 4: System.out.println("You selected 4."); 
-       
-       default: System.out.println("Selected again please.");
-       
-     }
- }
-}
-     
+import javax.swing.*;
+  public class ExecFive {
+    public static void main(String [] args){
+        String input = JOptionPane.showInputDialog(null, "Please enter a number", 1);
+        int choice = 0;
 
-  
+        try {
+            choice = Integer.parseInt(input);
+        } catch (NumberFormatException e){
+            System.out.println("This wasn't a number");
+            System.exit(0);
+        }
+
+        switch(choice){
+            case 1:
+                System.out.println("You selected 1");
+                break;
+            case 2:
+                //Fall through
+            case 3:
+                System.out.println("You selected 2 or 3");
+                break;
+            case 4:
+                System.out.println("You selected 4");
+                break;
+            default:
+                System.out.println("Select again please");
+        }
+    }
+}
