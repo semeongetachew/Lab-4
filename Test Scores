@@ -1,68 +1,51 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-// you can give any class name which you want but save program as same class name
-// Class prg7 save program as prg7.java
 class ExecFour
 {
-   public static void main(String args[])
-   {  
-       // Variable Declaration
-       int score1,score2,score3,totalscore;
-       String grade;
-       float avg;
+    public static void main(String args[])
+    {
+        // Variable Declaration
+        double score1 = 0.0;
+        double score2 = 0.0;
+        double score3 = 0.0;
+        double totalscore = 0.0;
+        double averagescore = 0.0;
+        String input = "";
 
-       // For Scanning Data user input
-       Scanner in=new Scanner(System.in);
 
-       System.out.print("Enter Test Score1=");
-       score1=in.nextInt();
-       System.out.print("Enter Test Score2=");
-       score2=in.nextInt();
-       System.out.print("Enter Test Score3=");
-       score3=in.nextInt();
+        try {
+            input = JOptionPane.showInputDialog(null, "Please enter first test score");
+            score1 = Double.parseDouble(input);
 
-       //For Calculate Total
-       totalscore=score1+score2+score3;
+            input = JOptionPane.showInputDialog(null, "Enter second test score");
+            score2 = Double.parseDouble(input);
 
-       //For Calculate Average
-       avg=totalscore/3;
+            input = JOptionPane.showInputDialog(null, "Enter third test score");
+            score3 = Double.parseDouble(input);
+        } catch (NumberFormatException nfe) {
+            System.out.println("This isn't a number! Exiting...");
+            System.exit(0);
+        }
 
-      
-       // Conditional statemets For Finding Grade  
-           if(avg>=90)
-           {  
-               grade="A";
-           }
-           else if(avg>=80 && avg<=89)
-           {
-               grade="B";
-          
-           }
-           else if(avg>=70 && avg<=79)
-           {
-               grade="C";
-          
-           }
-           else if(avg>=60 && avg<69)
-           {
-               grade="D";
-          
-           }
-           else
-           {
-               grade="F";
-           }
+        totalscore = score1 + score2 + score3;
+        averagescore = totalscore / 3;
 
-       // Result
-
-       System.out.println("======Result======");
-       System.out.println("Test Score1="+score1);
-       System.out.println("Test Score2="+score2);
-       System.out.println("Test Score3="+score3);
-       System.out.println("==================");
-       System.out.println("Score Average="+avg);
-       System.out.println("Grade="+grade);
-      
-      
-   }
+        // Conditional statemets For Finding Grade
+        if(averagescore>=90 && averagescore<=100){
+            JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                    + "\nThe Grade is A");
+        } else if(averagescore>=80 && averagescore<=89){
+            JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                    + "\nThe Grade is B");
+        } else if(averagescore>=70 && averagescore<=79) {
+            JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                    + "\nThe Grade is C");
+        } else if(averagescore>=60 && averagescore<=69) {
+            JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                    + "\nThe Grade is D");
+        } else {
+            JOptionPane.showMessageDialog(null, "Average of the test scores is" + averagescore
+                    + "\nThe Grade is F");
+        }
+    }
 }
