@@ -1,48 +1,37 @@
-import javax.swing.JOptionPane;
-import java.util.Scanner;
+ import javax.swing.JOptionPane;
 public class RomanNumerals
 {
- public static void main(String[] args)
- {
- int number;
- Scanner keyboard = new Scanner(System.in);
- System.out.print("Enter a number in the range of 1 - 10: ");
- number = keyboard.nextInt();
+    public static void main(String[] args)
+    {
+        int number = 0;
+        String input = JOptionPane.showInputDialog(null, "Enter a number in the range of 1 - 5");
+        try {
+            number = Integer.parseInt(input);
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "This isn't a number! Exiting...", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
 
- // Display the Roman numeral.
- switch (number)
- {
- case 1 :
- System.out.println("The Roman Number is: I");
- break;
- case 2 :
- System.out.println("The Roman Number is: II");
- break;
- case 3 :
- System.out.println("The Roman Number is: III");
- break;
- case 4 :
- System.out.println("The Roman Number is: IV");
- break;
- case 5 :
- System.out.println("The Roman Number is: V");
- break;
- case 6 :
- System.out.println("The Roman Number is: VI");
- break;
- case 7 :
- System.out.println("The Roman Number is: VII");
- break;
- case 8 :
- System.out.println("The Roman Number is: VIII");
- break;
- case 9 :
- System.out.println("The Roman Number is: IX");
- break;
- case 10 : System.out.println("The Roman Number is: X");
- break;
- 
- default : System.out.println("Invalid number.");
- }
- }
+        // Display the Roman numeral.
+        switch (number)
+        {
+            case 1 :
+                JOptionPane.showMessageDialog(null, "The Roman Number is I", "Roman Number", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 2 :
+                JOptionPane.showMessageDialog(null, "The Roman Number is II", "Roman Number", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 3 :
+                JOptionPane.showMessageDialog(null, "The Roman Number is III", "Roman Number", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 4 :
+                JOptionPane.showMessageDialog(null, "The Roman Number is IV", "Roman Number", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 5 :
+                JOptionPane.showMessageDialog(null, "The Roman Number is V", "Roman Number", JOptionPane.PLAIN_MESSAGE);
+                break;
+            default :
+                JOptionPane.showMessageDialog(null, "This isn't a valid number", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
