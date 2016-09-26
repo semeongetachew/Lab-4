@@ -1,0 +1,17 @@
+import javax.swing.*;
+
+public class OddEven {
+
+    public static void main(String [] args){
+        try {
+            int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Please enter a whole number"));
+            if((number % 2) == 0){
+                JOptionPane.showMessageDialog(null, number + " is an even number!");
+            } else {
+                JOptionPane.showMessageDialog(null, number + " is an odd number");
+            }
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "This wasn't a number", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
