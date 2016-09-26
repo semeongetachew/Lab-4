@@ -1,0 +1,68 @@
+import javax.swing.JOptionPane;
+import java.util.Scanner;
+
+// you can give any class name which you want but save program as same class name
+// Class prg7 save program as prg7.java
+class ExecFour
+{
+   public static void main(String args[])
+   {  
+       // Variable Declaration
+       int score1,score2,score3,totalscore;
+       String grade;
+       float avg;
+
+        
+
+       input = JOptionPane.showInputDialogue;
+                          ("Enter first test score ");
+       Score1=Integer.parseInt(input);
+       
+        input = JOptionPane.showInputDialogue
+                          ("Enter second test score ");
+       Score2=Integer.parseInt(input);
+       
+       
+        input = JOptionPane.showInputDialogue
+                          ("Enter third test score ");
+       Score3=Integer.parseInt(input);
+       
+       
+       
+  
+
+       //Total Score Calculation
+       totalscore=score1+score2+score3;
+
+       //Average Score Calculation
+       averagescore=totalscore/3;
+
+      
+       // Conditional statemets For Finding Grade  
+           if(averagescore>=90 && averagescore<=100)
+             JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                                             + "\nThe Grade is A");
+              
+           
+           else if(averagescore>=80 && averagescore<=89)
+             JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                                             + "\nThe Grade is B");
+             
+           else if(averagescore>=70 && averagescore<=79)
+             JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                                             + "\nThe Grade is C");
+           
+            else if(averagescore>=60 && averagescore<=69)
+             JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                                             + "\nThe Grade is D");
+           else 
+             JOptionPane.showMessageDialog(null , "Average of the test scores is" + averagescore
+                                             + "\nThe Grade is F");
+
+       // Result
+
+      System.exit(0);
+      
+      
+   }
+}
