@@ -1,0 +1,28 @@
+import javax.swing.*;
+
+public class RectangleComparison
+{
+    public static void main(String[] args)
+    {
+        try{
+            int width1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter width for first rectangle"));
+            int length1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter length for first rectangle"));
+
+            int width2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter width for second rectangle"));
+            int length2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter length for second rectangle"));
+
+            int area1 = width1 * length1;
+            int area2 = width2 * length2;
+
+            if(area1 == area2){
+                JOptionPane.showMessageDialog(null, "Both rectangles have the same area.");
+            } else if (area1 > area2){
+                JOptionPane.showMessageDialog(null, "Rectangle one has a greater area than rectangle two");
+            } else {
+                JOptionPane.showMessageDialog(null, "Rectangle two has a greater area than rectangle one");
+            }
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(null, "This isn't a number!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+} 
